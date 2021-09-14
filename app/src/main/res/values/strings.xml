@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MAD Class Project</string>
+    <string name="connecting">Connecting...</string>
+    <string name="authenticating">Authenticating user...</string>
+    <string name="auth_fail">Authentication Failed</string>
+    <string name="txt_login">Please provide your email address to the MAD Server</string>
+    <string name="email">Email address</string>
+    <string name="auth_ok">Authentication Successful</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="btn_menu">JUKEBOX</string>
+    <string name="txt_artist">Artist</string>
+    <string name="txt_title">Title</string>
+    <string name="txt_url">URL</string>
+    <string name="txt_nosong">No Song</string>
+    <string name="txt_stopped">Stopped</string>
+    <string name="txt_playing">Playing</string>
+    <string name="txt_requesting">Requesting a song from CTower...</string>
+    <string name="btn_shop">COFFEE SHOP APP</string>
+    <string name="btn_pay">PAY</string>
+
+
+</resources>
