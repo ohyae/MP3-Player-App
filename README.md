@@ -15,3 +15,5 @@ Note 1: All songs returned by CTower are compressed according to the MP3 standar
 Note 2: The song must be played from its remote location (i.e., from the value that is specified in the <url> tag).
 
 Note 3: This app is a coursework assignment. It queries a server that is not personally maintained by me and thus, may not work anymore if the webmaster decides to deactivate this service.
+
+![mp3](https://user-images.githubusercontent.com/66119148/136571762-81cc646f-72c7-400a-9485-279d22da27b9.JPG)
