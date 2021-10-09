@@ -15,8 +15,6 @@
     <string name="txt_stopped">Stopped</string>
     <string name="txt_playing">Playing</string>
     <string name="txt_requesting">Requesting a song from CTower...</string>
-    <string name="btn_shop">COFFEE SHOP APP</string>
-    <string name="btn_pay">PAY</string>
 
 
 </resources>

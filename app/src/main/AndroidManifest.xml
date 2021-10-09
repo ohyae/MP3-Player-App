@@ -18,13 +18,6 @@
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".JukeboxActivity" />
-        <activity android:name=".TablesActivity" />
-        <activity android:name=".OrderActivity" />
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".Product" />
-        <activity android:name=".ProductListAdapter" />
-        <activity android:name=".DBHandler" />
-        <activity android:name=".CTower" />
         <activity android:name=".RemoteContent" />
         <activity android:name=".MainActivity">
             <intent-filter>

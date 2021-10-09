@@ -1,14 +1,11 @@
 package com.example.madclassproject;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,14 +13,14 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 
 public class RemoteContent extends AsyncTask<String, Void, String> {
-    private String ResponseStatus, ResponseMessage;
+    private String ResponseStatus;
+    private String ResponseMessage;
     private String txt_singer, txt_song, txt_link;
     private Context CallingContext;
 
@@ -62,8 +59,6 @@ public class RemoteContent extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         ResponseStatus = getXMLContent(result, "<status>", "</status>", 0);
         ResponseMessage = getXMLContent(result, "<msg>", "</msg>", 0);
-        //ResponseTables = getXMLContent(result, "<tables>", "</tables>", 0);
-        //ResponseProducts = getXMLContent(result, "<products>", "</products>", 0);
 
         if (ResponseStatus.equals("0-FAIL")) {
             System.out.println("HERE HERE");
@@ -98,7 +93,7 @@ public class RemoteContent extends AsyncTask<String, Void, String> {
             try {
                 //Call Player
                 MediaPlayer player = ((JukeboxActivity)CallingContext).player;
-
+                player.pause();
                 //Call Song from CTower
                 txt_singer = getXMLContent(ResponseMessage, "<artist>", "</artist>", 0);
                 txt_song = getXMLContent(ResponseMessage, "<title>", "</title>", 0);
@@ -112,6 +107,7 @@ public class RemoteContent extends AsyncTask<String, Void, String> {
                 //player.prepareAsync();
                 player.prepare();
                 player.start();
+                //Play the song
                 //Change Status
                 ((JukeboxActivity)CallingContext).txt_status.setText(R.string.txt_playing);
                 //Enable Next Button
@@ -127,22 +123,8 @@ public class RemoteContent extends AsyncTask<String, Void, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        /*/Part 3 - Coffee Shop Ordering System
-        } else if (ResponseStatus.equals("3-OK")) {
-            //Get content from CTower
-
-        } else if (ResponseStatus.equals("4-FAIL")) {
-            Toast.makeText(CallingContext, R.string.auth_fail, Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(CallingContext, LoginActivity.class);
-            //CallingContext.startActivity(intent);
-
-        } else if (ResponseStatus.equals("5-OK")) {
-
-        */
 
         }
-
-
     }
 
     private String readStream(InputStream is) {
